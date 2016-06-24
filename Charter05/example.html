@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Image Gallery</title>
+	
+</head>
+<body>
+	<a href="http://wwww.example.com" class="popup">Example</a>
+	<script type="text/javascript">
+		window.onload = function(){
+			if (!document.getElementsByTagName) return false;
+			var lnks = document.getElementsByTagName("a");
+			for (var i = 0; i < lnks.length; i++) {
+				if (lnks[i].getAttribute("class") == "popup"){
+					lnks[i].onclick = function () {
+						popUp(this.getAttribute("href"));
+						return false;	
+					}
+				}
+			}
+		}	
+		function popUp(winURL) {
+			window.open(winURL, "popup", "width=320, height=480");
+		}
+	</script>
+</body>
+</html>
